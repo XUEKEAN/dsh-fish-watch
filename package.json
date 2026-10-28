@@ -1,0 +1,35 @@
+{
+  "name": "dsh-fish-watch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "看门鱼：帮后室里的这条鱼盯着 B 站的回信，攒成一个可以随时查的队列。",
+  "exports": {
+    ".": "./index.js",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg"
+  ],
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
